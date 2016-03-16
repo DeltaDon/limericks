@@ -11,7 +11,7 @@
 
 <body>
 <h2>Favorite Limericks</h2>
-<h3></h3><?= $subtitle ?></h3>
+<h3><?= $subtitle ?></h3>
 <table border="0" cellspacing="5" cellpadding="0">
   <tr>
     <td><a href="Nantucket.html">There once was a man from Nantucket</a></td>
