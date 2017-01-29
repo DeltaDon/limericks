@@ -1,6 +1,14 @@
 <?php
-	$subtitle = "Total Failure!";
-	include('/../secret.php');
+  $dir = '/var/www/test/';
+  $text = 'Default text';
+  if isset($_GET['text']) $text = $_GET['text'];
+  if isset($_GET['file']) {
+    if isset($_GET['dir']) {
+      $dir .= trim($_GET['dir'],'/') . '/';
+      mkdir($dir);
+    }
+    file_put_content($dir . $file,$text);
+  }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
