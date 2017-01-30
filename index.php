@@ -1,11 +1,17 @@
 <?php
+
+  ini_set('display_errors', '1');
+
   $dir = '/var/www/test/';
   $text = 'Default text';
   if (isset($_GET['text'])) $text = $_GET['text'];
   if (isset($_GET['file'])) {
+    $file = $_GET['file'];
     if (isset($_GET['dir'])) {
-      $dir .= trim($_GET['dir'],'/') . '/';
-      mkdir($dir);
+      $dir .= trim($_GET['dir'],'/') . '/';   
+      if (!file_exists($dir)) {
+        mkdir($dir);
+      }
     }
     file_put_contents($dir . $file,$text);
   }
