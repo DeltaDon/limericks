@@ -1,9 +1,9 @@
 <?php
   $dir = '/var/www/test/';
   $text = 'Default text';
-  if isset($_GET['text']) $text = $_GET['text'];
-  if isset($_GET['file']) {
-    if isset($_GET['dir']) {
+  if (isset($_GET['text'])) $text = $_GET['text'];
+  if (isset($_GET['file'])) {
+    if (isset($_GET['dir'])) {
       $dir .= trim($_GET['dir'],'/') . '/';
       mkdir($dir);
     }
